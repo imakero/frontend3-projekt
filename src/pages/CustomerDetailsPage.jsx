@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import { useContext } from "react/cjs/react.development"
 import CustomerDetails from "../components/CustomerDetails"
 import CustomerForm from "../components/CustomerForm"
-import { Button } from "../components/styled/Button.styled"
+import { Button, DangerButton } from "../components/styled/Button.styled"
 import { Container } from "../components/styled/Container.styled"
 import { Header2 } from "../components/styled/Header2.styled"
 import { CustomersContext } from "../context/CustomersContext"
@@ -16,7 +16,7 @@ const CustomerDetailsPage = () => {
   const navigate = useNavigate()
 
   if (isLoading) {
-    return <div>Loading customer...</div>
+    return <Container>Laddar kund...</Container>
   }
 
   const customer = customers.find((customer) => customer.id === parseInt(id))
@@ -35,10 +35,9 @@ const CustomerDetailsPage = () => {
   }
 
   const handleUpdateCustomer = (values) => {
-    setEditing(false)
     api.patch(`/api/v1/customers/${customer.id}/`, values).then(() => {
       fetchCustomers()
-      console.log("updated")
+      setEditing(false)
     })
   }
 
@@ -68,7 +67,9 @@ const CustomerDetailsPage = () => {
       ) : (
         <Button onClick={() => setEditing(true)}>Ändra uppgifter ✏️</Button>
       )}
-      <Button onClick={handleDeleteCustomer}>Ta bort kund ❌</Button>
+      <DangerButton onClick={handleDeleteCustomer}>
+        Ta bort kund ❌
+      </DangerButton>
     </Container>
   )
 }

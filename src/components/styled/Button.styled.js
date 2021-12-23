@@ -20,3 +20,8 @@ export const Button = styled.button`
     opacity: 0.9;
   }
 `
+
+export const DangerButton = styled(Button)`
+  background-color: ${({ theme }) => theme.colors.danger};
+  color: white;
+`

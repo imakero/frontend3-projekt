@@ -4,7 +4,7 @@ import api from "../lib/api"
 export const CustomersContext = createContext()
 
 export const CustomersProvider = ({ children }) => {
-  const [customers, setCustomers] = useState([])
+  const [customers, setCustomers] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
 
   const fetchCustomers = useCallback(
@@ -20,7 +20,7 @@ export const CustomersProvider = ({ children }) => {
     if (!localStorage.getItem("js3-project-token")) {
       return
     }
-    if (customers.length) {
+    if (customers) {
       return
     }
     fetchCustomers()

@@ -1,15 +1,6 @@
 import { createContext } from "react"
 import useForm from "../hooks/useForm"
-import styled from "styled-components"
-
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  font-family: Helvetica, sans serif;
-  font-size: 1rem;
-`
+import { StyledForm } from "./styled/StyledForm.styled"
 
 export const FormContext = createContext()
 

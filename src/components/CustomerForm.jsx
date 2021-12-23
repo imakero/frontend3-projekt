@@ -15,7 +15,7 @@ const defaultFormValues = {
 const validation = {
   vatNr: (value) => {
     if (!value.match(/^[Ss][Ee]\d{10,10}$/)) {
-      return 'VAT-nummer måste starta med "SE" följt av 10 siffror.'
+      return 'VAT-nummer måste börja med "SE" följt av 10 siffror.'
     }
     if (value.length !== 12) {
       return "This VAT-nr is too short"
