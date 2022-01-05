@@ -5,6 +5,5 @@ export const StyledForm = styled.form`
   flex-direction: column;
   gap: 1rem;
   width: 100%;
-  font-family: Helvetica, sans serif;
   font-size: 1rem;
 `

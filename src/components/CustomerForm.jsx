@@ -13,12 +13,14 @@ const defaultFormValues = {
 }
 
 const validation = {
+  // name: (value) => {
+  //   if (value.length < 3) {
+  //     return "Length of name must be at least 3 characters"
+  //   }
+  // },
   vatNr: (value) => {
     if (!value.match(/^[Ss][Ee]\d{10,10}$/)) {
       return 'VAT-nummer måste börja med "SE" följt av 10 siffror.'
-    }
-    if (value.length !== 12) {
-      return "This VAT-nr is too short"
     }
   },
 }

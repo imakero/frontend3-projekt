@@ -27,7 +27,9 @@ const LoginPage = () => {
       .then((res) => res.json())
       .then((data) => {
         const { token } = data
-        localStorage.setItem("js3-project-token", token)
+        if (token) {
+          localStorage.setItem("js3-project-token", token)
+        }
         navigate("/home")
       })
   }

@@ -7,6 +7,7 @@ import UserInfo from "./UserInfo"
 
 const Navigation = () => {
   const { user } = useContext(UserContext)
+
   return (
     <Nav>
       {user ? <UserInfo /> : <Header1>Customer relations</Header1>}
